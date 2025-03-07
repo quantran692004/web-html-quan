@@ -19,12 +19,12 @@
         
         .container {
             width: 95%; /* Tăng chiều rộng lên gần full màn hình */
-            max-width: 1500px; /* Tăng max-width gấp 3 lần (từ 500px lên 1500px) */
+            max-width: 1200px; /* Giới hạn chiều rộng tối đa */
             background-color: rgba(211, 167, 167, 0.121);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
             text-align: center;
-            padding: 50px; /* Tăng padding để nội dung không bị sát mép */
+            padding: 20px; /* Giảm padding để nội dung không bị sát mép */
             position: relative;
             z-index: 1;
         }
@@ -53,18 +53,17 @@
         }
 
         .envelope p {
-    position: absolute; 
-    width: 100%; 
-    text-align: center; 
-    color: #ff4d88; 
-    font-weight: bold; 
-    font-size: 1.8rem; 
-    top: 50%; /* Cho chữ nằm giữa */
-    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
-    z-index: 2; /* Đảm bảo nằm trên ảnh */
-    animation: fadeIn 2s infinite alternate; /* Hiệu ứng nhấp nháy */
-}
-
+            position: absolute; 
+            width: 100%; 
+            text-align: center; 
+            color: #ff4d88; 
+            font-weight: bold; 
+            font-size: 1.5rem; /* Giảm kích thước chữ */
+            top: 50%; 
+            transform: translateY(-50%); 
+            z-index: 2; 
+            animation: fadeIn 2s infinite alternate; 
+        }
         
         .message {
             display: none;
@@ -110,14 +109,12 @@
         }
         
         .sticker {
-            width: 80%;
-            max-width: 600px; /* Tăng kích thước sticker */
-            aspect-ratio: 4/3; 
-            height: auto;
-            aspect-ratio: 1/1;
-            margin: 30px auto;
-            overflow: hidden;
+            width: 100%; 
+            max-width: 400px; 
+            height: auto; 
+            margin: 20px auto;
             border-radius: 15px;
+            overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         
@@ -126,13 +123,7 @@
             height: 100%;
             object-fit: cover;
         }
-        @media (max-width: 768px) {
-    .sticker {
-        max-width: 400px; /* Co giãn nhỏ hơn trên điện thoại */
-    }
-}
 
-        
         .flower {
             position: absolute;
             opacity: 0.8;
@@ -141,15 +132,15 @@
         
         h1 {
             color: #ff4d88;
-            margin-bottom: 30px;
-            font-size: 4rem; /* Tăng kích thước chữ */
+            margin-bottom: 20px;
+            font-size: 3rem; /* Giảm kích thước chữ */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         p {
             color: #333;
-            line-height: 1.8;
-            font-size: 1.8rem; /* Tăng kích thước chữ */
+            line-height: 1.5;
+            font-size: 1.2rem; /* Giảm kích thước chữ */
             margin-bottom: 20px;
             max-width: 90%;
             margin-left: auto;
@@ -160,11 +151,11 @@
             background-color: #ff4d88;
             color: white;
             border: none;
-            padding: 20px 40px; /* Tăng padding */
+            padding: 10px 20px; /* Giảm padding */
             border-radius: 50px;
             cursor: pointer;
             margin: 15px;
-            font-size: 1.5rem; /* Tăng kích thước chữ */
+            font-size: 1.2rem; /* Giảm kích thước chữ */
             transition: all 0.3s;
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(255, 77, 136, 0.4);
@@ -215,58 +206,58 @@
         /* Responsive */
         @media (max-width: 1200px) {
             .container {
-                padding: 30px;
+                padding: 20px;
             }
             .envelope, .sticker {
                 max-width: 500px;
             }
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem; /* Giảm kích thước chữ */
             }
             p {
-                font-size: 1.5rem;
+                font-size: 1.2rem; /* Giảm kích thước chữ */
             }
             .btn {
-                padding: 15px 30px;
-                font-size: 1.2rem;
+                padding: 10px 20px; /* Giảm padding */
+                font-size: 1rem; /* Giảm kích thước chữ */
             }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 15px;
             }
             .envelope, .sticker {
-                max-width: 400px;
+                max-width: 90%; /* Đảm bảo phong bì và sticker không quá lớn */
             }
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem; /* Giảm kích thước chữ */
             }
             p {
-                font-size: 1.2rem;
+                font-size: 1rem; /* Giảm kích thước chữ */
             }
             .btn {
-                padding: 10px 20px;
-                font-size: 1rem;
+                padding: 8px 15px; /* Giảm padding */
+                font-size: 0.9rem; /* Giảm kích thước chữ */
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 15px;
+                padding: 10px;
             }
             .envelope, .sticker {
-                max-width: 300px;
+                max-width: 100%; /* Đảm bảo phong bì và sticker chiếm toàn bộ chiều ngang */
             }
             h1 {
-                font-size: 2rem;
+                font-size: 1.5rem; /* Giảm kích thước chữ */
             }
             p {
-                font-size: 1rem;
+                font-size: 0.9rem; /* Giảm kích thước chữ */
             }
             .btn {
-                padding: 8px 15px;
-                font-size: 0.9rem;
+                padding: 5px 10px; /* Giảm padding */
+                font-size: 0.8rem; /* Giảm kích thước chữ */
             }
         }
     </style>
