@@ -110,8 +110,9 @@
         }
         
         .sticker {
-            width: 100%;
-            max-width: 800px; /* Tăng kích thước sticker */
+            width: 80%;
+            max-width: 600px; /* Tăng kích thước sticker */
+            aspect-ratio: 4/3; 
             height: auto;
             aspect-ratio: 1/1;
             margin: 30px auto;
@@ -125,6 +126,12 @@
             height: 100%;
             object-fit: cover;
         }
+        @media (max-width: 768px) {
+    .sticker {
+        max-width: 400px; /* Co giãn nhỏ hơn trên điện thoại */
+    }
+}
+
         
         .flower {
             position: absolute;
