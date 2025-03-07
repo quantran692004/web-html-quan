@@ -16,19 +16,19 @@
             min-height: 100vh;
             overflow: hidden;
         }
-        
+
         .container {
             width: 95%; /* Tăng chiều rộng lên gần full màn hình */
-            max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+            max-width: 1500px; /* Tăng max-width gấp 3 lần (từ 500px lên 1500px) */
             background-color: rgba(211, 167, 167, 0.121);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
             text-align: center;
-            padding: 20px; /* Giảm padding để nội dung không bị sát mép */
+            padding: 50px; /* Tăng padding để nội dung không bị sát mép */
             position: relative;
             z-index: 1;
         }
-        
+
         .envelope {
             cursor: pointer;
             transition: transform 0.5s;
@@ -41,11 +41,11 @@
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
+
         .envelope:hover {
             transform: scale(1.05);
         }
-        
+
         .envelope img {
             width: 100%;
             height: 100%;
@@ -58,18 +58,18 @@
             text-align: center; 
             color: #ff4d88; 
             font-weight: bold; 
-            font-size: 1.5rem; /* Giảm kích thước chữ */
-            top: 50%; 
-            transform: translateY(-50%); 
-            z-index: 2; 
-            animation: fadeIn 2s infinite alternate; 
+            font-size: 1.8rem; 
+            top: 50%; /* Cho chữ nằm giữa */
+            transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+            z-index: 2; /* Đảm bảo nằm trên ảnh */
+            animation: fadeIn 2s infinite alternate; /* Hiệu ứng nhấp nháy */
         }
-        
+
         .message {
             display: none;
             animation: fadeIn 1s;
         }
-        
+
         .hearts {
             position: fixed;
             top: 0;
@@ -79,7 +79,7 @@
             pointer-events: none;
             z-index: 0;
         }
-        
+
         .heart {
             position: absolute;
             width: 20px;
@@ -88,7 +88,7 @@
             transform: rotate(45deg);
             animation: fall linear infinite;
         }
-        
+
         .heart::before, .heart::after {
             content: '';
             position: absolute;
@@ -97,81 +97,76 @@
             background-color: #ff4d88;
             border-radius: 50%;
         }
-        
+
         .heart::before {
             top: -10px;
             left: 0;
         }
-        
+
         .heart::after {
             top: 0;
             left: -10px;
         }
-        
+
         .sticker {
-            width: 100%; 
-            max-width: 400px; 
-            height: auto; 
-            margin: 20px auto;
-            border-radius: 15px;
+            width: 100%;
+            max-width: 800px; /* Tăng kích thước sticker */
+            height: auto;
+            aspect-ratio: 1/1;
+            margin: 30px auto;
             overflow: hidden;
+            border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-        
+
         .sticker img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .flower {
-            position: absolute;
-            opacity: 0.8;
-            pointer-events: none;
-        }
-        
         h1 {
             color: #ff4d88;
-            margin-bottom: 20px;
-            font-size: 3rem; /* Giảm kích thước chữ */
+            margin-bottom: 30px;
+            font-size: 4rem; /* Tăng kích thước chữ */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        
+
         p {
             color: #333;
-            line-height: 1.5;
-            font-size: 1.2rem; /* Giảm kích thước chữ */
+            line-height: 1.8;
+            font-size: 1.8rem; /* Tăng kích thước chữ */
             margin-bottom: 20px;
             max-width: 90%;
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .btn {
             background-color: #ff4d88;
             color: white;
             border: none;
-            padding: 10px 20px; /* Giảm padding */
+            padding: 20px 40px; /* Tăng padding */
             border-radius: 50px;
             cursor: pointer;
             margin: 15px;
-            font-size: 1.2rem; /* Giảm kích thước chữ */
+            font-size: 1.5rem; /* Tăng kích thước chữ */
             transition: all 0.3s;
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(255, 77, 136, 0.4);
         }
-        
+
         .btn:hover {
             background-color: #ff1a75;
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(255, 77, 136, 0.5);
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         @keyframes fall {
             0% {
                 transform: translateY(-100px) rotate(45deg);
@@ -182,7 +177,7 @@
                 opacity: 0;
             }
         }
-        
+
         .confetti {
             position: absolute;
             width: 15px;
@@ -191,7 +186,7 @@
             top: 0;
             animation: confettiFall linear forwards;
         }
-        
+
         @keyframes confettiFall {
             0% {
                 transform: translateY(-10px) rotate(0deg);
@@ -206,71 +201,71 @@
         /* Responsive */
         @media (max-width: 1200px) {
             .container {
-                padding: 20px;
+                padding: 30px;
             }
             .envelope, .sticker {
-                max-width: 500px;
+                max-width: 500px; /* Điều chỉnh kích thước phong bì và sticker */
             }
             h1 {
-                font-size: 2.5rem; /* Giảm kích thước chữ */
+                font-size: 3rem; /* Điều chỉnh kích thước tiêu đề */
             }
             p {
-                font-size: 1.2rem; /* Giảm kích thước chữ */
+                font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
             }
             .btn {
-                padding: 10px 20px; /* Giảm padding */
-                font-size: 1rem; /* Giảm kích thước chữ */
+                padding: 15px 30px;
+                font-size: 1.2rem; /* Điều chỉnh kích thước nút */
             }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 15px;
+                padding: 20px;
             }
             .envelope, .sticker {
-                max-width: 90%; /* Đảm bảo phong bì và sticker không quá lớn */
+                max-width: 400px; /* Điều chỉnh kích thước phong bì và sticker */
             }
             h1 {
-                font-size: 2rem; /* Giảm kích thước chữ */
+                font-size: 2.5rem; /* Điều chỉnh kích thước tiêu đề */
             }
             p {
-                font-size: 1rem; /* Giảm kích thước chữ */
+                font-size: 1.2rem; /* Điều chỉnh kích thước chữ */
             }
             .btn {
-                padding: 8px 15px; /* Giảm padding */
-                font-size: 0.9rem; /* Giảm kích thước chữ */
+                padding: 10px 20px;
+                font-size: 1rem; /* Điều chỉnh kích thước nút */
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 10px;
+                padding: 15px;
             }
             .envelope, .sticker {
-                max-width: 100%; /* Đảm bảo phong bì và sticker chiếm toàn bộ chiều ngang */
+                max-width: 300px; /* Điều chỉnh kích thước phong bì và sticker */
             }
             h1 {
-                font-size: 1.5rem; /* Giảm kích thước chữ */
+                font-size: 2rem; /* Điều chỉnh kích thước tiêu đề */
             }
             p {
-                font-size: 0.9rem; /* Giảm kích thước chữ */
+                font-size: 1rem; /* Điều chỉnh kích thước chữ */
             }
             .btn {
-                padding: 5px 10px; /* Giảm padding */
-                font-size: 0.8rem; /* Giảm kích thước chữ */
+                padding: 8px 15px;
+                font-size: 0.9rem; /* Điều chỉnh kích thước nút */
             }
         }
     </style>
 </head>
 <body>
     <div class="hearts" id="hearts"></div>
-    
+
     <div class="container">
         <div id="envelope" class="envelope">
             <img src="images/envelope.jpg" alt="Envelope" />
             <p>Nhấn vào để mở</p>
         </div>
-        
+
         <div id="message" class="message">
             <h1>Chúc mừng ngày 8/3!</h1>
             <div class="sticker">
@@ -278,87 +273,53 @@
             </div>
             <p>Gửi đến người con gái đặc biệt nhất trong cuộc đời anh!</p>
             <p>Chúc em một ngày 8/3 thật hạnh phúc và tràn đầy niềm vui. Em là điều tuyệt vời nhất đã đến với cuộc sống của anh. Cảm ơn em vì đã luôn ở bên anh, và là động lực để anh trở nên tốt hơn mỗi ngày.</p>
-            <p>Anh yêu em rất nhiều! ❤️</p>
-            <button class="btn" id="surprise">Bất ngờ nữa!</button>
-            <button class="btn" id="reset">Làm lại</button>
+            <p>Anh yêu em rất nhiều! ❤️!</p>
+            <button class="btn" id="surpriseBtn">Bất ngờ</button>
+            <button class="btn" id="resetBtn">Làm lại</button>
         </div>
     </div>
 
     <script>
+        const envelope = document.getElementById('envelope');
+        const message = document.getElementById('message');
+        const heartsContainer = document.getElementById('hearts');
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        envelope.addEventListener('click', () => {
+            message.style.display = 'block';
+            envelope.style.display = 'none';
+            createHearts();
+            generateConfetti();
+        });
+
+        surpriseBtn.addEventListener('click', () => {
+            alert('Chúc em một ngày thật tuyệt vời! 💖');
+        });
+
+        resetBtn.addEventListener('click', () => {
+            location.reload();
+        });
+
         function createHearts() {
-            const heartsContainer = document.getElementById('hearts');
-            const heartCount = 20;
-            for (let i = 0; i < heartCount; i++) {
+            for (let i = 0; i < 10; i++) {
                 const heart = document.createElement('div');
                 heart.classList.add('heart');
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                heart.style.animationDelay = Math.random() * 5 + 's';
-                heart.style.opacity = Math.random() * 0.5 + 0.5;
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
                 heartsContainer.appendChild(heart);
-                heart.addEventListener('animationend', () => heart.remove());
             }
         }
 
-        function createConfetti() {
-            const heartsContainer = document.getElementById('hearts');
-            const confettiCount = 50;
-            const colors = ['#ff4d88', '#ffb3d9', '#ff80bf', '#ffcce6', '#ff1a75'];
-            for (let i = 0; i < confettiCount; i++) {
+        function generateConfetti() {
+            for (let i = 0; i < 100; i++) {
                 const confetti = document.createElement('div');
                 confetti.classList.add('confetti');
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
                 heartsContainer.appendChild(confetti);
-                confetti.addEventListener('animationend', () => confetti.remove());
             }
         }
-
-        function createFlowers() {
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => {
-                    const flower = document.createElement('div');
-                    flower.classList.add('flower');
-                    flower.innerHTML = '🌸';
-                    flower.style.fontSize = (Math.random() * 30 + 20) + 'px';
-                    flower.style.left = Math.random() * 100 + 'vw';
-                    flower.style.top = '100vh';
-                    flower.style.animation = `fadeIn 0.5s, confettiFall ${Math.random() * 4 + 2}s linear forwards`;
-                    document.body.appendChild(flower);
-                    flower.addEventListener('animationend', () => flower.remove());
-                }, i * 200);
-            }
-        }
-
-        window.onload = () => {
-            createHearts();
-            const envelope = document.getElementById('envelope');
-            const message = document.getElementById('message');
-            const surpriseBtn = document.getElementById('surprise');
-            const resetBtn = document.getElementById('reset');
-
-            envelope.addEventListener('click', () => {
-                envelope.style.display = 'none';
-                message.style.display = 'block';
-            });
-
-            surpriseBtn.addEventListener('click', () => {
-                createConfetti();
-                createFlowers();
-                surpriseBtn.textContent = "Anh yêu em! ❤️";
-                surpriseBtn.disabled = true;
-            });
-
-            resetBtn.addEventListener('click', () => {
-                envelope.style.display = 'block';
-                message.style.display = 'none';
-                surpriseBtn.textContent = "Bất ngờ nữa!";
-                surpriseBtn.disabled = false;
-                document.querySelectorAll('.heart, .confetti, .flower').forEach(el => el.remove());
-                createHearts();
-            });
-        };
     </script>
 </body>
 </html>
